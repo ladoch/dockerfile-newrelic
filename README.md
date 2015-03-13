@@ -1,10 +1,10 @@
-# uzyexe/newrelic
+# ladoch/newrelic
 
 Run the New Relic server monitor daemon.
 
 ## Dockerfile
 
-[**Trusted Build**](https://index.docker.io/u/uzyexe/newrelic)
+[**Trusted Build**](https://index.docker.io/u/ladoch/newrelic)
 
 This Docker image is based on the official [debian:squeeze](https://index.docker.io/_/debian/) base image.
 
@@ -34,7 +34,7 @@ This Docker image is based on the official [debian:squeeze](https://index.docker
             TimeoutStartSec=10m
             ExecStartPre=-/usr/bin/docker stop newrelic
             ExecStartPre=-/usr/bin/docker rm -f newrelic
-            ExecStartPre=/usr/bin/docker pull uzyexe/newrelic
+            ExecStartPre=/usr/bin/docker pull ladoch/newrelic
             ExecStart=/bin/bash -c '/usr/bin/docker run --rm --name newrelic --env="NEW_RELIC_LICENSE_KEY=YOUR_NEW_RELIC_LICENSE_KEY" -h `/usr/bin/hostname` uzyexe/newrelic'
             ExecStop=/usr/bin/docker stop newrelic
 
